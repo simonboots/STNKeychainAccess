@@ -19,6 +19,7 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1C167F3F0B1F720C00909914 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
 		1C3126350B1E248A007CDA26 /* STNKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = STNKeychainAccess.h; sourceTree = "<group>"; };
 		1C3126360B1E248A007CDA26 /* STNKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = STNKeychainAccess.m; sourceTree = "<group>"; };
 		1C31263B0B1E2741007CDA26 /* DemoController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DemoController.h; sourceTree = "<group>"; };
@@ -81,6 +82,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1C167F2B0B1F710B00909914 /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				1C167F3F0B1F720C00909914 /* Readme.txt */,
+			);
+			name = Doc;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* STNKeychainAccess */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +98,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				1C167F2B0B1F710B00909914 /* Doc */,
 			);
 			name = STNKeychainAccess;
 			sourceTree = "<group>";
