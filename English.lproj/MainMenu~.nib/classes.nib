@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {fetchStoredPassword = id; setNewPassword = id; }; 
+            CLASS = DemoController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                accountname = NSTextField; 
+                newpassword = NSTextField; 
+                oldpassword = NSTextField; 
+                servicename = NSTextField; 
+                statusline = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}
