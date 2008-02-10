@@ -79,7 +79,7 @@
 {
     if ([[servicename stringValue] length] == 0 ||
         [[accountname stringValue] length] == 0) {
-        [statusline setStringValue:[NSString stringWithFormat:@"Please enter service and account name"]];
+        [statusline setStringValue:@"Please enter service and account name"];
         return NO;
     }
     return YES;

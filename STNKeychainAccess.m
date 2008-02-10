@@ -90,15 +90,15 @@
             
             // differs - change it
             SecKeychainAttribute attrs[] = {
-            { kSecAccountItemAttr, [_accountName cStringLength], [_accountName cString] },
-            { kSecServiceItemAttr, [_serviceName cStringLength], [_serviceName cString] } };
+            { kSecAccountItemAttr, [_accountName lengthOfBytesUsingEncoding:NSUTF8StringEncoding], [_accountName cStringUsingEncoding:NSUTF8StringEncoding] },
+            { kSecServiceItemAttr, [_serviceName lengthOfBytesUsingEncoding:NSUTF8StringEncoding], [_serviceName cStringUsingEncoding:NSUTF8StringEncoding] } };
             
             const SecKeychainAttributeList attributes = { sizeof(attrs) / sizeof(attrs[0]), attrs };
             
             status = SecKeychainItemModifyAttributesAndData(itemRef,
                                                             &attributes,
-                                                            [password cStringLength],
-                                                            [password cString]);
+                                                            [password lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
+                                                            [password cStringUsingEncoding:NSUTF8StringEncoding]);
             if (status != noErr) {
                 NSLog(@"Error while updating keychain data: %d", status);
             }         
@@ -110,12 +110,12 @@
     } else {
         // no entry - add it
         return SecKeychainAddGenericPassword(NULL,
-                                             [_serviceName cStringLength],
-                                             [_serviceName cString],
-                                             [_accountName cStringLength],
-                                             [_accountName cString],
-                                             [password cStringLength],
-                                             [password cString],
+                                             [_serviceName lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
+                                             [_serviceName cStringUsingEncoding:NSUTF8StringEncoding],
+                                             [_accountName lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
+                                             [_accountName cStringUsingEncoding:NSUTF8StringEncoding],
+                                             [password lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
+                                             [password cStringUsingEncoding:NSUTF8StringEncoding],
                                              NULL);
     }
 }
@@ -125,12 +125,13 @@
 {
     void *passwordData;
     UInt32 passwordLength;
+    char *pword;
     
     OSStatus status = SecKeychainFindGenericPassword(NULL,
-                                                     [_serviceName cStringLength],
-                                                     [_serviceName cString],
-                                                     [_accountName cStringLength],
-                                                     [_accountName cString],
+                                                     [_serviceName lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
+                                                     [_serviceName cStringUsingEncoding:NSUTF8StringEncoding],
+                                                     [_accountName lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
+                                                     [_accountName cStringUsingEncoding:NSUTF8StringEncoding],
                                                      &passwordLength,
                                                      &passwordData,
                                                      itemRef);
@@ -139,8 +140,15 @@
         if (*password != nil) {
             [*password release];
         }
-        *password = [NSString stringWithCString:(char *)passwordData];
+
+        pword = (char *)malloc(sizeof(char) * (passwordLength + 1));
+        memcpy(pword, passwordData, passwordLength);
+        pword[passwordLength] = '\0';
+        
+        *password = [NSString stringWithCString:(char *)pword encoding:NSUTF8StringEncoding];
         SecKeychainItemFreeContent(NULL, passwordData);
+        free(pword);
+        
     } else {
         *password = nil;
     }

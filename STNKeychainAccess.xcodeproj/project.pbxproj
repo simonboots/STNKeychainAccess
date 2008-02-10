@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2DF9870D5FA8A400D37680 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2DF9860D5FA8A400D37680 /* Security.framework */; };
 		1C3126370B1E248A007CDA26 /* STNKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3126360B1E248A007CDA26 /* STNKeychainAccess.m */; };
 		1C31263D0B1E2741007CDA26 /* DemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C31263C0B1E2741007CDA26 /* DemoController.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
@@ -20,6 +21,7 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1C167F3F0B1F720C00909914 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		1C2DF9860D5FA8A400D37680 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		1C3126350B1E248A007CDA26 /* STNKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = STNKeychainAccess.h; sourceTree = "<group>"; };
 		1C3126360B1E248A007CDA26 /* STNKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = STNKeychainAccess.m; sourceTree = "<group>"; };
 		1C31263B0B1E2741007CDA26 /* DemoController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DemoController.h; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				1C2DF9870D5FA8A400D37680 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C2DF9860D5FA8A400D37680 /* Security.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -158,9 +162,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "STNKeychainAccess" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* STNKeychainAccess */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* STNKeychainAccess */,
 			);
