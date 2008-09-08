@@ -136,7 +136,7 @@
                                                      &passwordData,
                                                      itemRef);
     
-    if (status != errSecItemNotFound) {
+    if (status == 0) {
         if (*password != nil) {
             [*password release];
         }
